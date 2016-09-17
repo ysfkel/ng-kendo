@@ -1,0 +1,47 @@
+<doctype html>
+<html ng-app="app">
+   <meta charset="UTF-8">
+    <title>KendoNg</title>
+ 
+    <!--<link href="content/bootstrap.css" rel="stylesheet" />-->
+    <link href="bower_components/kendo-ui/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+    <link href="bower_components/kendo-ui/styles/kendo.silver.min.css" rel="stylesheet" type="text/css" />
+    <link href="bower_components/kendo-ui/styles/kendo.silver.mobile.min.css" rel="stylesheet" type="text/css" />
+    <!--<link href="bower_components/kendo-ui/styles/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
+    <link href="bower_components/kendo-ui/styles/kendo.dataviz.default.min.css" rel="stylesheet" type="text/css" />
+   -->
+    <style>
+        body {
+            margin: 4em 0 0 1em;
+        }
+    </style>
+</head>
+<body>
+    <h2>Kendo UI & AngularJS</h2>
+<div ng-controller="ctr as vm">
+    <h4>Select product</h4>
+    {{vm.name}}
+    <select kendo-multi-select k-options="vm.selectOptions" k-ng-model="selectedIds" k-value-primitive="true"></select>
+    <p ng-show="vm.selectedIds.length"><br />Selected: {{ selectedIds }}</p>
+
+       grid
+        <kendo-grid options="vm.mainGridOptions">
+        </kendo-grid>
+
+   
+</div>
+
+</div>
+    <!--vendor files-->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/kendo-ui/js/kendo.core.min.js"></script>
+<script src="bower_components/kendo-ui/js/kendo.ui.core.min.js"></script>
+    <script src="bower_components/kendo-ui/js/kendo.angular.min.js"></script>
+    
+<!-- my scripts -->
+    <script src="app/app.js"></script>
+    <!--<script src="app/welcome/welcome.js"></script>-->
+</body>
+</html>
